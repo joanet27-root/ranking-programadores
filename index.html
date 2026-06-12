@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ranking gay</title>
+  <title>Ranking de Programadores</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
+<body class="with-background">
   <main class="app-shell">
     <section id="login-screen" class="card login-card">
-      <h1 id="login-title">Ranking gay</h1>
+      <h1 id="login-title">Ranking de Programadores</h1>
       <p class="muted">Introduce la contraseña común para acceder.</p>
       <form id="login-form" class="stack">
         <input id="common-password" type="password" placeholder="Contraseña" autocomplete="current-password" required />
@@ -21,7 +21,7 @@
     <section id="app-screen" hidden>
       <header class="topbar">
         <div>
-          <h1 id="app-title">Ranking gay</h1>
+          <h1 id="app-title">Ranking de Programadores</h1>
           <p class="muted">Puntúa de -3 a +3 con justificación obligatoria.</p>
         </div>
         <div class="topbar-actions">
@@ -36,11 +36,11 @@
           <form id="vote-form" class="stack">
             <label>
               Tu nombre
-              <input id="voter-name" type="text" placeholder="Ej. Batis" autocomplete="name" required />
+              <input id="voter-name" type="text" placeholder="Ej. Pedro" autocomplete="name" required />
             </label>
 
             <label>
-              Julapilla
+              Programador
               <select id="programmer-select" required></select>
             </label>
 
@@ -67,7 +67,7 @@
               <thead>
                 <tr>
                   <th>#</th>
-                  <th>Julapilla</th>
+                  <th>Programador</th>
                   <th>Puntos</th>
                   <th>Votos</th>
                 </tr>

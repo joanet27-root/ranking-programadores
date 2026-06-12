@@ -256,10 +256,10 @@ function renderRanking() {
 
   els.podium.innerHTML = `
     <div class="podium-card">
-      <strong>Mas julapa:</strong> ${escapeHtml(first.name)} (${formatSignedNumber(first.total)})
+      <strong>Primero:</strong> ${escapeHtml(first.name)} (${formatSignedNumber(first.total)})
     </div>
     <div class="podium-card">
-      <strong>Mas macho:</strong> ${escapeHtml(last.name)} (${formatSignedNumber(last.total)})
+      <strong>Último:</strong> ${escapeHtml(last.name)} (${formatSignedNumber(last.total)})
     </div>
   `;
 
