@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ranking de Programadores</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="with-background">
+  <main class="app-shell">
+    <section id="login-screen" class="card login-card">
+      <h1 id="login-title">Ranking de Programadores</h1>
+      <p class="muted">Introduce la contraseña común para acceder.</p>
+      <form id="login-form" class="stack">
+        <input id="common-password" type="password" placeholder="Contraseña" autocomplete="current-password" required />
+        <button type="submit">Entrar</button>
+        <p id="login-error" class="error" hidden></p>
+      </form>
+    </section>
+
+    <section id="app-screen" hidden>
+      <header class="topbar">
+        <div>
+          <h1 id="app-title">Ranking de Programadores</h1>
+          <p class="muted">Puntúa de -3 a +3 con justificación obligatoria.</p>
+        </div>
+        <div class="topbar-actions">
+          <button id="admin-open-button" type="button" class="secondary">Admin</button>
+          <button id="logout-button" type="button" class="ghost">Salir</button>
+        </div>
+      </header>
+
+      <section class="grid two-columns">
+        <article class="card">
+          <h2>Votar</h2>
+          <form id="vote-form" class="stack">
+            <label>
+              Tu nombre
+              <input id="voter-name" type="text" placeholder="Ej. Pedro" autocomplete="name" required />
+            </label>
+
+            <label>
+              Programador
+              <select id="programmer-select" required></select>
+            </label>
+
+            <fieldset class="points-fieldset">
+              <legend>Puntos</legend>
+              <div id="points-options" class="points-options"></div>
+            </fieldset>
+
+            <label>
+              Justificación
+              <textarea id="justification" rows="4" placeholder="Explica el motivo de tu puntuación" required minlength="3"></textarea>
+            </label>
+
+            <button type="submit">Guardar voto</button>
+            <p id="vote-message" class="success" hidden></p>
+          </form>
+        </article>
+
+        <article class="card">
+          <h2>Clasificación</h2>
+          <div id="podium" class="podium"></div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Programador</th>
+                  <th>Puntos</th>
+                  <th>Votos</th>
+                </tr>
+              </thead>
+              <tbody id="ranking-body"></tbody>
+            </table>
+          </div>
+        </article>
+      </section>
+
+      <section class="card">
+        <div class="section-header">
+          <h2>Historial de puntos</h2>
+          <button id="refresh-button" type="button" class="secondary">Actualizar</button>
+        </div>
+        <div id="history-list" class="history-list"></div>
+      </section>
+
+      <section id="admin-panel" class="card admin-panel" hidden>
+        <div class="section-header">
+          <div>
+            <h2>Panel admin</h2>
+            <p class="muted">Puedes modificar puntos/justificación o eliminar votos.</p>
+          </div>
+          <button id="admin-close-button" type="button" class="ghost">Cerrar admin</button>
+        </div>
+        <div id="admin-list" class="admin-list"></div>
+      </section>
+    </section>
+  </main>
+
+  <dialog id="admin-dialog">
+    <form id="admin-login-form" method="dialog" class="stack dialog-card">
+      <h2>Acceso admin</h2>
+      <input id="admin-password" type="password" placeholder="Contraseña admin" autocomplete="current-password" required />
+      <menu>
+        <button value="cancel" type="button" id="admin-cancel-button" class="secondary">Cancelar</button>
+        <button type="submit">Entrar</button>
+      </menu>
+      <p id="admin-error" class="error" hidden></p>
+    </form>
+  </dialog>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
